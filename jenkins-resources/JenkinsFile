@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+    environment {
+        JENKINS_DIRECTORY = '03-CD/Jenkins/jenkins-resources/calculator'
+    }
+
+    stages {
+        stage('Compile') {
+            steps {
+                dir("${JENKINS_DIRECTORY}") {
+                    sh '''
+                        gradle compileJava
+                    '''
+                }
+            }
+        }
+
+        stage('Unit Tests') {
+            steps {
+                dir("${JENKINS_DIRECTORY}") {
+                    sh '''
+                        gradle test
+                    '''
+                }
+            }
+        }
+    }
+}
