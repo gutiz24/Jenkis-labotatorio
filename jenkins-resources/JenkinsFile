@@ -9,7 +9,7 @@ pipeline {
             steps {
                 dir("${JENKINS_DIRECTORY}") {
                     sh '''
-                        gradle compileJava
+                        ./gradlew compileJava
                     '''
                 }
             }
@@ -19,7 +19,7 @@ pipeline {
             steps {
                 dir("${JENKINS_DIRECTORY}") {
                     sh '''
-                        gradle test
+                        ./gradlew test
                     '''
                 }
             }
