@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        JENKINS_DIRECTORY = '03-CD/Jenkins/jenkins-resources/calculator'
+        JENKINS_DIRECTORY = 'jenkins-resources/calculator'
     }
 
     stages {
